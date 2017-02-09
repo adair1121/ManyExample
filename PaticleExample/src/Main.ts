@@ -129,8 +129,11 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected startCreateScene(): void {
+        //获取粒子资源
         var texture = RES.getRes("fire_png");
         var config = RES.getRes("fire_json");
+        
+        //新建粒子效果
         var fireStar:particle.GravityParticleSystem = new particle.GravityParticleSystem(texture, config);
         this.addChild(fireStar);
         fireStar.start();

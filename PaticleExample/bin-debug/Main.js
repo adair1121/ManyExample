@@ -134,8 +134,10 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.startCreateScene = function () {
+        //获取粒子资源
         var texture = RES.getRes("fire_png");
         var config = RES.getRes("fire_json");
+        //新建粒子效果
         var fireStar = new particle.GravityParticleSystem(texture, config);
         this.addChild(fireStar);
         fireStar.start();
