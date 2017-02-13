@@ -28,6 +28,11 @@
 					"isFolder":false,
 					"key":"m3_r_png",
 					"name":"m3_r_png"
+				},
+				{
+					"isFolder":false,
+					"key":"pyy_jpeg",
+					"name":"pyy_jpeg"
 				}
 			]
 		}

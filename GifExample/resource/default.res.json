@@ -23,6 +23,11 @@
 			"name":"m3_r_png",
 			"type":"image",
 			"url":"assets/m3_r.png"
+		},
+		{
+			"name":"pyy_jpeg",
+			"type":"image",
+			"url":"assets/pyy.jpeg"
 		}
 	]
 }

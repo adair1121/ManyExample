@@ -22,8 +22,6 @@ var HomeScene = (function (_super) {
     __extends(HomeScene, _super);
     function HomeScene() {
         var _this = _super.call(this) || this;
-        /**我的图片*/
-        _this.myImg = new eui.Image();
         /**手势*/
         _this.gesturePinch = new GesturePinch();
         _this.gestureDrag = new GestureDrag();
@@ -35,6 +33,8 @@ var HomeScene = (function (_super) {
     HomeScene.prototype.childrenCreated = function () {
         //保存HomeScene调用
         window["homeScene"] = this;
+        //遮罩
+        this.pictureGroup.mask = this.pictureMask;
         //监听我要换脸点击事件
         this.openFileBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOpenFile, this);
         this.okBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOkBtn, this);
@@ -68,8 +68,6 @@ var HomeScene = (function (_super) {
         //将加载图片的数据赋值给myImg
         this.myImg.addEventListener(egret.Event.COMPLETE, this.onMyImgComplete, this);
         this.myImg.source = result;
-        this.imgGroup.removeChildren();
-        this.imgGroup.addChild(this.myImg);
     };
     //myImg生成完成
     HomeScene.prototype.onMyImgComplete = function () {
@@ -102,17 +100,19 @@ var HomeScene = (function (_super) {
         this.gestureDrag.stop();
         //截取合成图
         var render = new egret.RenderTexture();
-        render.drawToTexture(this.pictureGroup);
+        render.drawToTexture(this.pictureGroup, new egret.Rectangle(0, 0, 400, 350));
         var img = new eui.Image();
         img.texture = render;
         var list = [];
         list.push(img.texture.toDataURL("image/png"));
         var render2 = new egret.RenderTexture();
         this.imgGroup.y = 15;
-        render2.drawToTexture(this.pictureGroup);
+        render2.drawToTexture(this.pictureGroup, new egret.Rectangle(0, 0, 400, 350));
         var img2 = new eui.Image();
         img2.texture = render2;
         list.push(img2.texture.toDataURL("image/png"));
+        //移除本场景所有内容
+        this.removeChildren();
         //创建Gif
         var htmlImg;
         var gameDiv = document.getElementById("gameDiv");

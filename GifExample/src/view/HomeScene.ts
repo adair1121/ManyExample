@@ -16,7 +16,7 @@ class HomeScene extends eui.Component{
     /**确认生成*/
     private okBtn:eui.Image;
     /**我的图片*/
-    private myImg:eui.Image = new eui.Image();
+    private myImg:eui.Image;
     /**手势*/
     private gesturePinch: GesturePinch = new GesturePinch();
     private gestureDrag: GestureDrag = new GestureDrag();
@@ -24,6 +24,8 @@ class HomeScene extends eui.Component{
     private imgGroup:eui.Group;
     /**图片容器*/
     private pictureGroup:eui.Group;
+    /**图片容器遮罩*/
+    private pictureMask:eui.Rect;
     
 	public constructor() {
     	super();
@@ -35,6 +37,8 @@ class HomeScene extends eui.Component{
 	public childrenCreated(){
     	  //保存HomeScene调用
         window["homeScene"] = this;
+        //遮罩
+        this.pictureGroup.mask = this.pictureMask;
     	  //监听我要换脸点击事件
         this.openFileBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOpenFile, this);
         this.okBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOkBtn, this);
@@ -71,8 +75,6 @@ class HomeScene extends eui.Component{
         //将加载图片的数据赋值给myImg
         this.myImg.addEventListener(egret.Event.COMPLETE, this.onMyImgComplete, this);
         this.myImg.source = result;
-        this.imgGroup.removeChildren();
-        this.imgGroup.addChild(this.myImg);
     }
     
     //myImg生成完成
@@ -110,7 +112,7 @@ class HomeScene extends eui.Component{
         
         //截取合成图
         var render: egret.RenderTexture = new egret.RenderTexture();
-        render.drawToTexture(this.pictureGroup);
+        render.drawToTexture(this.pictureGroup, new egret.Rectangle(0,0,400,350));
         var img: eui.Image = new eui.Image();
         img.texture = render;
         
@@ -119,11 +121,14 @@ class HomeScene extends eui.Component{
         
         var render2: egret.RenderTexture = new egret.RenderTexture();
         this.imgGroup.y = 15;
-        render2.drawToTexture(this.pictureGroup);
+        render2.drawToTexture(this.pictureGroup,new egret.Rectangle(0,0,400,350));
         var img2: eui.Image = new eui.Image();
         img2.texture = render2;
         
         list.push(img2.texture.toDataURL("image/png"));
+        
+        //移除本场景所有内容
+        this.removeChildren();
         
         //创建Gif
         var htmlImg;
