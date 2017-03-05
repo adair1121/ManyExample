@@ -44,8 +44,7 @@ var Http = (function () {
      * @thisObject 回调执行对象
      */
     Http.prototype.send = function (msg, callBack, thisObject) {
-        if (msg == null) {
-            egret.log(1);
+        if (this.httpMethod == egret.HttpMethod.GET) {
             this.cacheList.push([null, callBack, thisObject]);
         }
         else {
@@ -63,12 +62,10 @@ var Http = (function () {
         }
         this.curSend = this.cacheList.shift();
         this.request.open(this.serverUrl, this.httpMethod);
-        //this.request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        this.request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         //this.request.setRequestHeader("Content-Type","application/json");
-        if (this.curSend[0] == null) {
-            egret.log(2);
+        if (this.httpMethod == egret.HttpMethod.GET) {
             this.request.send();
-            egret.log(3);
         }
         else {
             this.request.send(this.curSend[0]);
@@ -77,7 +74,7 @@ var Http = (function () {
     };
     /**发送完成*/
     Http.prototype.onPostComplete = function (e) {
-        egret.log(4);
+        egret.log("postComplete");
         if (this.curSend) {
             this.curSend[1].call(this.curSend[2], this.request.response);
         }

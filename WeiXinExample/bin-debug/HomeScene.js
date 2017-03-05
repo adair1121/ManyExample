@@ -174,7 +174,7 @@ var HomeScene = (function (_super) {
     //获取地理位置成功
     HomeScene.prototype.getLocationSuccess = function (e) {
         var res = e.data;
-        WxUtils.getInstance().openLocation(res.latitude, res.longitude, "test");
+        WxUtils.getInstance().openLocation(res.latitude, res.longitude, "地理位置测试");
     };
     return HomeScene;
 }(eui.Component));

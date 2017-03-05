@@ -2,6 +2,13 @@
  * 微信工具类
  * @author chenkai
  * @date 2017/3/1
+ * 
+ * 微信JSSDK接口测试
+ * 1. 分享功能
+ * 2. 图片功能
+ * 3. 录音功能
+ * 4. 音频识别
+ * 5. 地理位置
  */
 class WxUtils extends egret.EventDispatcher{
     /**选择相册图片成功*/

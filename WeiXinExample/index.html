@@ -52,7 +52,7 @@ $signPackage = $jssdk->GetSignPackage();
 	<!--game_files_end-->
 </head>
 <body>
-
+	
     <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" id="gameDiv"
          data-entry-class="Main"
          data-orientation="portrait"
@@ -65,15 +65,36 @@ $signPackage = $jssdk->GetSignPackage();
          data-show-fps="true" data-show-log="true"
          data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
     </div>
+    
+    <script src="jquery-1.5.2.min.js"></script>
+    
     <script>
 	    	var wxInfo = {};
 	    	wxInfo.debug = true;
 	    	wxInfo.appId = '<?php echo $signPackage["appId"];?>';
-	    	wxInfo.timestamp = '<?php echo $signPackage["timestamp"];?>';	    	
+	    	wxInfo.timestamp = '<?php echo $signPackage["timestamp"];?>';
 	    	wxInfo.nonceStr = '<?php echo $signPackage["nonceStr"];?>';
 	    	wxInfo.signature = '<?php echo $signPackage["signature"];?>';
     	
     		var version = "1.0";
+			//"https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx4a14bf95e973b059&secret=af99ce68694f39e2712e7cf7c22fe224&code=" + code + "&grant_type=authorization_code"    	
+    	
+    		function getToken(code){
+    			var url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx4a14bf95e973b059&secret=af99ce68694f39e2712e7cf7c22fe224&code=" + code + "&grant_type=authorization_code";
+		    	$.ajax({  
+			    	type : "get",  
+			    	async:false,  
+			    	url : url,  
+			    	dataType : "json",//数据类型为jsonp  
+			    	
+			    	success : function(data){  
+			    		alert('success:',data);
+			    	},  
+			    	error:function(){  
+			    		alert('fail');  
+			    	}  
+		    	});
+    		}
     	
         /**
          * {

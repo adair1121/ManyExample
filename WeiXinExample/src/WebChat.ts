@@ -2,7 +2,10 @@
  * 网页授权
  * @author chenkai
  * @date 2017/3/2 
- *
+ * 
+ * 微信网页授权测试
+ * 1. 由于拿到code后访问不了https://api.weixin.qq.com/sns/oauth2/access_token
+ *    无法测试，原因未知....
  */
 class WebChat {
     /*
@@ -11,24 +14,30 @@ class WebChat {
      */ 
 	public constructor() {
     	  //获取code
-    	  egret.log("code:", egret.getOption('code'));
-    	  egret.log("state:", egret.getOption('state'));
+        var code = egret.getOption('code');
+        var state = egret.getOption('state');
+    	  egret.log("code:", code);
+    	  egret.log("state:", state);
+    	  
+    	  
+    	  window["getToken"](code);
+    	  
     	  
     	  //用code换取access_token
-    	  return;
-          var url: string = "https://api.weixin.qq.com/sns/oauth2/access_token";
-          url += "?appid=wx4a14bf95e973b059";
-          url += "&secret=af99ce68694f39e2712e7cf7c22fe224";
-          url += "&code=" + egret.getOption('code');
-          url += "&grant_type=authorization_code";
-          Http.getInstance().initServerUrl(url);
-          Http.getInstance().send(null,this.getAccessToken, this);
+//          var url: string = "https://api.weixin.qq.com/sns/oauth2/access_token";
+//          url += "?appid=wx4a14bf95e973b059";
+//          url += "&secret=af99ce68694f39e2712e7cf7c22fe224";
+//          //url += "&code=" + egret.getOption('code');
+//          url += "&code=" + "021OSiPy0Fv7Ah13zkPy0S3FPy0OSiPu";
+//          url += "&grant_type=authorization_code";
+//          egret.log("request url:", url);
+//          Http.getInstance().initServerUrl(url);
+//          Http.getInstance().send(null,this.getAccessToken, this);
 	}
 	
 	//code换取access_token
-    private getAccessToken(e:egret.Event){
-        var request = <egret.HttpRequest>e.currentTarget;
-        egret.log("get data : ",request.response);
+    private getAccessToken(response){
+        egret.log("get data : ", response);
 	}
 	
 }

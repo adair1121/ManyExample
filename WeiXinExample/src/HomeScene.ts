@@ -224,7 +224,7 @@ class HomeScene extends eui.Component{
         WxUtils.getInstance().openLocation(
             res.latitude,
             res.longitude,
-            "test"
+            "地理位置测试"
             );
     }
 }

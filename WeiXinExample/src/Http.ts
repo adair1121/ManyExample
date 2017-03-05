@@ -52,8 +52,7 @@ class Http{
 	 * @thisObject 回调执行对象
 	 */
     public send(msg, callBack:Function, thisObject:any){
-        if(msg == null){
-            egret.log(1);
+        if(this.httpMethod == egret.HttpMethod.GET){
             this.cacheList.push([null,callBack,thisObject]);
         }else{
             this.cacheList.push([JSON.stringify(msg),callBack,thisObject]);
@@ -71,12 +70,10 @@ class Http{
 		}
 		this.curSend = this.cacheList.shift();
 		this.request.open(this.serverUrl ,this.httpMethod);
-        //this.request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        this.request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         //this.request.setRequestHeader("Content-Type","application/json");
-        if(this.curSend[0] == null){
-            egret.log(2);
+        if(this.httpMethod == egret.HttpMethod.GET){
             this.request.send();
-            egret.log(3);
         }else{
             this.request.send(this.curSend[0]);
         }
@@ -85,7 +82,7 @@ class Http{
 	
 	/**发送完成*/
 	private onPostComplete(e:egret.Event):void{
-        egret.log(4);
+    	egret.log("postComplete");
 		if(this.curSend){
 			this.curSend[1].call(this.curSend[2], this.request.response);
 		}
