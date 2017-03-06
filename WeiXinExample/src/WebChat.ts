@@ -5,7 +5,7 @@
  * 
  * 微信网页授权测试
  * 1. 由于拿到code后访问不了https://api.weixin.qq.com/sns/oauth2/access_token
- *    无法测试，原因未知....
+ *    https啊... - -
  */
 class WebChat {
     /*

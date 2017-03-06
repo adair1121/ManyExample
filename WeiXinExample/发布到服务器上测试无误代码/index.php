@@ -7,7 +7,7 @@ $signPackage = $jssdk->GetSignPackage();
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Egret</title>
+    <title>Egret1</title>
     <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="full-screen" content="true"/>
@@ -27,12 +27,12 @@ $signPackage = $jssdk->GetSignPackage();
 
     <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件。删除 modules_files 标签后，库文件加载列表将不会变化，请谨慎操作！-->
     <!--modules_files_start-->
-	<script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
-	<script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
-	<script egret="lib" src="libs/modules/eui/eui.js" src-release="libs/modules/eui/eui.min.js"></script>
-	<script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
-	<script egret="lib" src="libs/modules/tween/tween.js" src-release="libs/modules/tween/tween.min.js"></script>
-	<script egret="lib" src="libs/modules/weixinapi/weixinapi.js" src-release="libs/modules/weixinapi/weixinapi.min.js"></script>
+	<script egret="lib" src="libs/modules/egret/egret.min.js"></script>
+	<script egret="lib" src="libs/modules/egret/egret.web.min.js"></script>
+	<script egret="lib" src="libs/modules/eui/eui.min.js"></script>
+	<script egret="lib" src="libs/modules/res/res.min.js"></script>
+	<script egret="lib" src="libs/modules/tween/tween.min.js"></script>
+	<script egret="lib" src="libs/modules/weixinapi/weixinapi.min.js"></script>
 	<!--modules_files_end-->
 
     <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
@@ -41,18 +41,12 @@ $signPackage = $jssdk->GetSignPackage();
 
     <!--这个标签会被替换为项目中所有的 javascript 文件。删除 game_files 标签后，项目文件加载列表将不会变化，请谨慎操作！-->
     <!--game_files_start-->
-	<script egret="game" src="bin-debug/WebChat.js"></script>
-	<script egret="game" src="bin-debug/WxUtils.js"></script>
-	<script egret="game" src="bin-debug/ThemeAdapter.js"></script>
-	<script egret="game" src="bin-debug/Main.js"></script>
-	<script egret="game" src="bin-debug/LoadingUI.js"></script>
-	<script egret="game" src="bin-debug/Http.js"></script>
-	<script egret="game" src="bin-debug/HomeScene.js"></script>
-	<script egret="game" src="bin-debug/AssetAdapter.js"></script>
+	<script src="main.min.js?ver=1.29"></script>
 	<!--game_files_end-->
+	<script src="jquery-1.5.2.min.js"></script>
 </head>
 <body>
-	
+
     <div style="margin: auto;width: 100%;height: 100%;" class="egret-player" id="gameDiv"
          data-entry-class="Main"
          data-orientation="portrait"
@@ -63,25 +57,19 @@ $signPackage = $jssdk->GetSignPackage();
          data-show-paint-rect="false"
          data-multi-fingered="2"
          data-show-fps="true" data-show-log="true"
-         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.3">
     </div>
-    
-    <script src="jquery-1.5.2.min.js"></script>
-    
     <script>
-    	    //保存微信配置信息
+			var version = "1.29";
+
 	    	var wxInfo = {};
 	    	wxInfo.debug = true;
 	    	wxInfo.appId = '<?php echo $signPackage["appId"];?>';
-	    	wxInfo.timestamp = '<?php echo $signPackage["timestamp"];?>';
+	    	wxInfo.timestamp = '<?php echo $signPackage["timestamp"];?>';	    	
 	    	wxInfo.nonceStr = '<?php echo $signPackage["nonceStr"];?>';
 	    	wxInfo.signature = '<?php echo $signPackage["signature"];?>';
-    	
-    		//游戏版本，防止缓存
-    		var version = "1.0";
-			  	
-    		//测试网页授权，使用code换取token
-    		function getToken(code){
+
+			function getToken(code){
     			var url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wx4a14bf95e973b059&secret=af99ce68694f39e2712e7cf7c22fe224&code=" + code + "&grant_type=authorization_code";
 		    	$.ajax({  
 			    	type : "get",  

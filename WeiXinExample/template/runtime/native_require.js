@@ -8,14 +8,14 @@ var game_file_list = [
 	"libs/modules/res/res.js",
 	"libs/modules/tween/tween.js",
 	"libs/modules/weixinapi/weixinapi.js",
-	"bin-debug/AssetAdapter.js",
+	"bin-debug/WebChat.js",
 	"bin-debug/WxUtils.js",
 	"bin-debug/ThemeAdapter.js",
 	"bin-debug/Main.js",
 	"bin-debug/LoadingUI.js",
 	"bin-debug/Http.js",
 	"bin-debug/HomeScene.js",
-	"bin-debug/WebChat.js",
+	"bin-debug/AssetAdapter.js",
 	//----auto game_file_list end----
 ];
 
