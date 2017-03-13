@@ -23,6 +23,8 @@ class ScrollView extends eui.Scroller {
     private touchStartPos: number;
     /**当前触摸位置和起始触摸位置距离*/
     private touchDist: number;
+    /**自动滚动时，禁止操作，防止自动移动tween中再次操作，导致位置错误*/
+    private bScrolling:Boolean = false;
 
     public constructor() {
         super();
@@ -54,7 +56,9 @@ class ScrollView extends eui.Scroller {
     
     /**拖动开始*/
     private onChangeStartHandler() {
-        console.log("ItemScroller >> " + "change start");
+        //防止tween和组件本身toScroll移动方向冲突，导致changeend事件触发被延迟。
+        egret.Tween.removeTweens(this.viewport);
+        //记录触摸开始点
         if(this.isHScroller) {
             this.touchStartPos = this.viewport.scrollH;
         } else {
@@ -64,8 +68,7 @@ class ScrollView extends eui.Scroller {
     
     /**拖动结束*/
     private onChangeEndHandler(): void {
-        console.log("ItemScroller >> " + "change end");
-        if(this.touchStartPos == -1){ //防点击触发changeend
+        if(this.touchStartPos == -1){ //防止touch_tap触发changeend
             return;
         }
         var dict: number;
@@ -114,6 +117,18 @@ class ScrollView extends eui.Scroller {
                 egret.Tween.get(this.viewport).to({ scrollV: item * this.itemSize,ease: egret.Ease.quadOut },this.delayScroll);
             }
         }
+    }
+    
+    /**允许滚动*/
+    public enableScroll(){
+        this.touchEnabled = true;
+        this.touchChildren = true;
+    }
+    
+    /**禁止滚动*/
+    public disableScroll(){
+        this.touchEnabled = false;
+        this.touchChildren = false;
     }
     
     /**销毁*/

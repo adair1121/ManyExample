@@ -24,6 +24,8 @@ var ScrollView = (function (_super) {
         _this.curItemCount = 0;
         /**滚动时间*/
         _this.delayScroll = 300;
+        /**自动滚动时，禁止操作，防止自动移动tween中再次操作，导致位置错误*/
+        _this.bScrolling = false;
         return _this;
     }
     ScrollView.prototype.childrenCreated = function () {
@@ -49,7 +51,9 @@ var ScrollView = (function (_super) {
     };
     /**拖动开始*/
     ScrollView.prototype.onChangeStartHandler = function () {
-        console.log("ItemScroller >> " + "change start");
+        //防止tween和组件本身toScroll移动方向冲突，导致changeend事件触发被延迟。
+        egret.Tween.removeTweens(this.viewport);
+        //记录触摸开始点
         if (this.isHScroller) {
             this.touchStartPos = this.viewport.scrollH;
         }
@@ -59,7 +63,6 @@ var ScrollView = (function (_super) {
     };
     /**拖动结束*/
     ScrollView.prototype.onChangeEndHandler = function () {
-        console.log("ItemScroller >> " + "change end");
         if (this.touchStartPos == -1) {
             return;
         }
@@ -109,6 +112,16 @@ var ScrollView = (function (_super) {
                 egret.Tween.get(this.viewport).to({ scrollV: item * this.itemSize, ease: egret.Ease.quadOut }, this.delayScroll);
             }
         }
+    };
+    /**允许滚动*/
+    ScrollView.prototype.enableScroll = function () {
+        this.touchEnabled = true;
+        this.touchChildren = true;
+    };
+    /**禁止滚动*/
+    ScrollView.prototype.disableScroll = function () {
+        this.touchEnabled = false;
+        this.touchChildren = false;
     };
     /**销毁*/
     ScrollView.prototype.destroy = function () {
