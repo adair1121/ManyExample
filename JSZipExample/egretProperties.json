@@ -21,6 +21,9 @@
     {
       "name": "res"
     },
+    {
+      "name": "eui"
+    },
 		{
 			"name": "jszip",
 			"path": "jszip"

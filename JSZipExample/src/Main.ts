@@ -140,12 +140,30 @@ class Main extends egret.DisplayObjectContainer {
               //数据怪物数据
               console.log("史莱姆", monsterConfig.shiLaiMu);
               console.log("地精", monsterConfig.diJing);
+
+              //读取图片  参考教程：https://segmentfault.com/a/1190000002669262
+              var buffer = zip.file("fire.png").asArrayBuffer();
+              var base64 = this.arrayBufferToBase64(buffer);
+              base64 = "data:image/png;base64," + base64;
+              
+              var img:eui.Image = new eui.Image();
+              img.source = base64;
+              this.addChild(img);
+
               
         },this, RES.ResourceItem.TYPE_BIN);
             
     }
 
-
+    private arrayBufferToBase64( buffer ) {  
+        var binary = '';  
+        var bytes = new Uint8Array( buffer );  
+        var len = bytes.byteLength;  
+        for (var i = 0; i < len; i++) {  
+            binary += String.fromCharCode( bytes[ i ] );  
+        }  
+        return window.btoa( binary );  
+    }
 
 }
 

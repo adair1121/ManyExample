@@ -19,3 +19,4 @@ var MonsterConfig = (function () {
     return MonsterConfig;
 }());
 egret.registerClass(MonsterConfig,'MonsterConfig');
+//# sourceMappingURL=MonsterConfig.js.map
