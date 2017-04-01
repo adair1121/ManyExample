@@ -8,13 +8,13 @@ var game_file_list = [
 	"libs/modules/eui/eui.js",
 	"libs/modules/tween/tween.js",
 	"bin-debug/base/SingleClass.js",
-	"bin-debug/scene/HomeScene.js",
+	"bin-debug/component/HtmlText.js",
 	"bin-debug/App.js",
 	"bin-debug/utils/StageUtils.js",
 	"bin-debug/adapter/ThemeAdapter.js",
 	"bin-debug/adapter/AssetAdapter.js",
 	"bin-debug/Main.js",
-	"bin-debug/component/HtmlText.js",
+	"bin-debug/scene/HomeScene.js",
 	//----auto game_file_list end----
 ];
 

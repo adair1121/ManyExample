@@ -17,11 +17,11 @@ var HomeScene = (function (_super) {
         return _this;
     }
     HomeScene.prototype.childrenCreated = function () {
+        this.removeChild(this.euiLabel);
         var htmlText = new HTMLText();
-        htmlText.setValue("123456789");
-        htmlText.setPosition(this.euiLabel.x, this.euiLabel.y, this.euiLabel.width, this.euiLabel.height);
+        htmlText.setValue("123456");
+        htmlText.setPosition(0, this.euiLabel.y, this.euiLabel.width, this.euiLabel.height);
     };
     return HomeScene;
 }(eui.Component));
 __reflect(HomeScene.prototype, "HomeScene");
-//# sourceMappingURL=HomeScene.js.map

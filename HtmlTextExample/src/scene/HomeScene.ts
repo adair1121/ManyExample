@@ -12,9 +12,11 @@ class HomeScene extends eui.Component{
 	}
 
 	public childrenCreated(){
+		this.removeChild(this.euiLabel);
+
 		var htmlText:HTMLText = new HTMLText();
-		htmlText.setValue("123456789");
-		htmlText.setPosition(this.euiLabel.x, this.euiLabel.y, this.euiLabel.width, this.euiLabel.height);
+		htmlText.setValue("123456");
+		htmlText.setPosition(0, this.euiLabel.y, this.euiLabel.width, this.euiLabel.height);
 	}
 
 }
