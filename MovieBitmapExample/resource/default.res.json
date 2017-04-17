@@ -1,0 +1,105 @@
+{
+	"groups": [
+		{
+			"name": "preload",
+			"keys": "boom_png,boom_10_png,boom_11_png,boom_12_png,boom_13_png,boom_14_png,boom_15_png,boom_16_png,boom_17_png,boom_18_png,boom_1_png,boom_2_png,boom_3_png,boom_4_png,boom_5_png,boom_6_png,boom_7_png,boom_8_png,boom_9_png"
+		}
+	],
+	"resources": [
+		{
+			"name": "boom_png",
+			"type": "image",
+			"url": "assets/boom.png"
+		},
+		{
+			"name": "boom_10_png",
+			"type": "image",
+			"url": "assets/boom_10.png"
+		},
+		{
+			"name": "boom_11_png",
+			"type": "image",
+			"url": "assets/boom_11.png"
+		},
+		{
+			"name": "boom_12_png",
+			"type": "image",
+			"url": "assets/boom_12.png"
+		},
+		{
+			"name": "boom_13_png",
+			"type": "image",
+			"url": "assets/boom_13.png"
+		},
+		{
+			"name": "boom_14_png",
+			"type": "image",
+			"url": "assets/boom_14.png"
+		},
+		{
+			"name": "boom_15_png",
+			"type": "image",
+			"url": "assets/boom_15.png"
+		},
+		{
+			"name": "boom_16_png",
+			"type": "image",
+			"url": "assets/boom_16.png"
+		},
+		{
+			"name": "boom_17_png",
+			"type": "image",
+			"url": "assets/boom_17.png"
+		},
+		{
+			"name": "boom_18_png",
+			"type": "image",
+			"url": "assets/boom_18.png"
+		},
+		{
+			"name": "boom_1_png",
+			"type": "image",
+			"url": "assets/boom_1.png"
+		},
+		{
+			"name": "boom_2_png",
+			"type": "image",
+			"url": "assets/boom_2.png"
+		},
+		{
+			"name": "boom_3_png",
+			"type": "image",
+			"url": "assets/boom_3.png"
+		},
+		{
+			"name": "boom_4_png",
+			"type": "image",
+			"url": "assets/boom_4.png"
+		},
+		{
+			"name": "boom_5_png",
+			"type": "image",
+			"url": "assets/boom_5.png"
+		},
+		{
+			"name": "boom_6_png",
+			"type": "image",
+			"url": "assets/boom_6.png"
+		},
+		{
+			"name": "boom_7_png",
+			"type": "image",
+			"url": "assets/boom_7.png"
+		},
+		{
+			"name": "boom_8_png",
+			"type": "image",
+			"url": "assets/boom_8.png"
+		},
+		{
+			"name": "boom_9_png",
+			"type": "image",
+			"url": "assets/boom_9.png"
+		}
+	]
+}
