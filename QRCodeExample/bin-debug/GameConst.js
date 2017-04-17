@@ -7,4 +7,3 @@ var GameConst = (function () {
     return GameConst;
 }());
 __reflect(GameConst.prototype, "GameConst");
-//# sourceMappingURL=GameConst.js.map

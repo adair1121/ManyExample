@@ -78,4 +78,3 @@ var QRCode = (function () {
     return QRCode;
 }());
 __reflect(QRCode.prototype, "QRCode");
-//# sourceMappingURL=QRCode.js.map

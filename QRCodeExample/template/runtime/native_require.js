@@ -7,13 +7,13 @@ var game_file_list = [
 	"libs/modules/res/res.js",
 	"libs/modules/eui/eui.js",
 	"libs/modules/tween/tween.js",
-	"bin-debug/QRCode.js",
+	"bin-debug/AssetAdapter.js",
 	"bin-debug/ThemeAdapter.js",
 	"bin-debug/Main.js",
 	"bin-debug/LoadingUI.js",
 	"bin-debug/HomeScene.js",
 	"bin-debug/GameConst.js",
-	"bin-debug/AssetAdapter.js",
+	"bin-debug/QRCode.js",
 	//----auto game_file_list end----
 ];
 
