@@ -5,7 +5,6 @@
  */
 class HomeScene extends eui.Component{
 	private euiCode:eui.Image;  //exml二维码图片
-	private htmlCode:QRCode;    //html二维码图片
 
 	public constructor() {
 		super();
@@ -13,9 +12,11 @@ class HomeScene extends eui.Component{
 	}
 
 	public childrenCreated(){
-		//this.htmlCode = new QRCode("resource/assets/test.png");
-		this.htmlCode = new QRCode("resource/assets/code.jpg");
-		this.htmlCode.setPosition(this.euiCode.x, this.euiCode.y, this.euiCode.width, this.euiCode.height);
-		this.htmlCode.showHtmlCode();
+		//透明图片test.png，测试用，用来观察img覆盖效果
+		//var htmlCode = new QRCode("resource/assets/test.png");
+		
+		var htmlCode = new QRCode("resource/assets/code.jpg");
+		htmlCode.setPosition(this.euiCode.x, this.euiCode.y, this.euiCode.width, this.euiCode.height);
+		htmlCode.showHtmlCode();
 	}
 }

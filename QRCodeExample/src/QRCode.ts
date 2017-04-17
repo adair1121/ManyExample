@@ -5,9 +5,8 @@
  * @since 2017/4/17
  * 
  * example:
- * var euiCode:eui.Image;    //exml上二维码图片
- * var qrCode:QRCode = new QRCode("resource/assets/qrcode.png");
- * qrCode.setPosition(euiCode.x, euiCode.y, euiCode.width, euiCode.height);
+ * var qrCode:QRCode = new QRCode("resource/assets/qrcode.jpg");
+ * qrCode.setPosition(100, 100, 200, 200);
  * qrCode.showHtmlCode();
  */
 class QRCode{
