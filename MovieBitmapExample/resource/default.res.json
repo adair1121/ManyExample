@@ -1,105 +1,105 @@
 {
 	"groups": [
 		{
-			"name": "preload",
-			"keys": "boom_png,boom_10_png,boom_11_png,boom_12_png,boom_13_png,boom_14_png,boom_15_png,boom_16_png,boom_17_png,boom_18_png,boom_1_png,boom_2_png,boom_3_png,boom_4_png,boom_5_png,boom_6_png,boom_7_png,boom_8_png,boom_9_png"
+			"keys": "boom_png,dragon12_jpg,dragon13_jpg,dragon14_jpg,dragon15_jpg,dragon16_jpg,dragon17_jpg,dragon0_jpg,dragon1_jpg,dragon2_jpg,dragon3_jpg,dragon4_jpg,dragon5_jpg,dragon6_jpg,dragon7_jpg,dragon8_jpg,dragon9_jpg,dragon10_jpg,dragon11_jpg",
+			"name": "preload"
 		}
 	],
 	"resources": [
 		{
-			"name": "boom_png",
+			"url": "assets/boom.png",
 			"type": "image",
-			"url": "assets/boom.png"
+			"name": "boom_png"
 		},
 		{
-			"name": "boom_10_png",
+			"name": "dragon12_jpg",
 			"type": "image",
-			"url": "assets/boom_10.png"
+			"url": "assets/dragon12.jpg"
 		},
 		{
-			"name": "boom_11_png",
+			"name": "dragon13_jpg",
 			"type": "image",
-			"url": "assets/boom_11.png"
+			"url": "assets/dragon13.jpg"
 		},
 		{
-			"name": "boom_12_png",
+			"name": "dragon14_jpg",
 			"type": "image",
-			"url": "assets/boom_12.png"
+			"url": "assets/dragon14.jpg"
 		},
 		{
-			"name": "boom_13_png",
+			"name": "dragon15_jpg",
 			"type": "image",
-			"url": "assets/boom_13.png"
+			"url": "assets/dragon15.jpg"
 		},
 		{
-			"name": "boom_14_png",
+			"name": "dragon16_jpg",
 			"type": "image",
-			"url": "assets/boom_14.png"
+			"url": "assets/dragon16.jpg"
 		},
 		{
-			"name": "boom_15_png",
+			"name": "dragon17_jpg",
 			"type": "image",
-			"url": "assets/boom_15.png"
+			"url": "assets/dragon17.jpg"
 		},
 		{
-			"name": "boom_16_png",
+			"name": "dragon0_jpg",
 			"type": "image",
-			"url": "assets/boom_16.png"
+			"url": "assets/dragon0.jpg"
 		},
 		{
-			"name": "boom_17_png",
+			"name": "dragon1_jpg",
 			"type": "image",
-			"url": "assets/boom_17.png"
+			"url": "assets/dragon1.jpg"
 		},
 		{
-			"name": "boom_18_png",
+			"name": "dragon2_jpg",
 			"type": "image",
-			"url": "assets/boom_18.png"
+			"url": "assets/dragon2.jpg"
 		},
 		{
-			"name": "boom_1_png",
+			"name": "dragon3_jpg",
 			"type": "image",
-			"url": "assets/boom_1.png"
+			"url": "assets/dragon3.jpg"
 		},
 		{
-			"name": "boom_2_png",
+			"name": "dragon4_jpg",
 			"type": "image",
-			"url": "assets/boom_2.png"
+			"url": "assets/dragon4.jpg"
 		},
 		{
-			"name": "boom_3_png",
+			"name": "dragon5_jpg",
 			"type": "image",
-			"url": "assets/boom_3.png"
+			"url": "assets/dragon5.jpg"
 		},
 		{
-			"name": "boom_4_png",
+			"name": "dragon6_jpg",
 			"type": "image",
-			"url": "assets/boom_4.png"
+			"url": "assets/dragon6.jpg"
 		},
 		{
-			"name": "boom_5_png",
+			"name": "dragon7_jpg",
 			"type": "image",
-			"url": "assets/boom_5.png"
+			"url": "assets/dragon7.jpg"
 		},
 		{
-			"name": "boom_6_png",
+			"name": "dragon8_jpg",
 			"type": "image",
-			"url": "assets/boom_6.png"
+			"url": "assets/dragon8.jpg"
 		},
 		{
-			"name": "boom_7_png",
+			"name": "dragon9_jpg",
 			"type": "image",
-			"url": "assets/boom_7.png"
+			"url": "assets/dragon9.jpg"
 		},
 		{
-			"name": "boom_8_png",
+			"name": "dragon10_jpg",
 			"type": "image",
-			"url": "assets/boom_8.png"
+			"url": "assets/dragon10.jpg"
 		},
 		{
-			"name": "boom_9_png",
+			"name": "dragon11_jpg",
 			"type": "image",
-			"url": "assets/boom_9.png"
+			"url": "assets/dragon11.jpg"
 		}
 	]
 }

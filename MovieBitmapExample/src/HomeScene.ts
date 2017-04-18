@@ -10,20 +10,20 @@ class HomeScene extends eui.Component{
 	}
 
 	public childrenCreated(){
-		//获取爆炸特效位图
-		var bm:egret.Bitmap = new egret.Bitmap(RES.getRes("boom_png"));
-
-		//创建爆炸特效
+		//创建自定义影片剪辑
 		var boom:BitmapMovie = new BitmapMovie();
+
 		//使用整张序列图初始化
+		var bm:egret.Bitmap = new egret.Bitmap(RES.getRes("boom_png"));
 		boom.initByBitmap(bm,4,5,0,18,192,192);
+
 		//使用零散的多张序列图初始化
-		//boom.initByTile("boom_",1, "png",18);
+		//boom.initByTile("dragon", "jpg",18);
 
 		//设置位置
 		boom.x = (this.stage.stageWidth - boom.width)/2;
 		boom.y = (this.stage.stageHeight - boom.height)/2;
-		boom.delay = 1000/30;
+		boom.delay = 1000/20;
 		this.addChild(boom);
 
 		//监听播放完成
@@ -31,7 +31,7 @@ class HomeScene extends eui.Component{
 		boom.addEventListener(egret.Event.LOOP_COMPLETE, this.onLoopComplete, this);
 
 		//开始播放
-		boom.play(3);
+		boom.play(999);
 	}
 
 	//所有播放完成

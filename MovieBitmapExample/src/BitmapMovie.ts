@@ -3,7 +3,7 @@
  * @author chenkai
  * @since 2017/4/17
  */
-class BitmapMovie extends egret.Bitmap{
+class BitmapMovie extends eui.Image{
 	/**纹理列表 */
 	private textureList:Array<egret.Texture> = [];
 	/**总帧数 */
@@ -43,14 +43,13 @@ class BitmapMovie extends egret.Bitmap{
 	/**
 	 * 使用零散的序列图初始化
 	 * @imgName 图片名称  命名格式: "boom0_png","boom1_png",...
-	 * @startPos 起始位置
 	 * @imgType 图片后缀 "png"或者"jpg"
 	 * @pieceNum 有多少张
 	 */
-	public initByTile(imgName:string, startPos:number, imgType:string, pieceNum:number){
+	public initByTile(imgName:string, imgType:string, pieceNum:number){
 		this.textureList.length = 0;
 		for(var i=0;i<pieceNum;i++){
-			this.textureList[i] = RES.getRes(imgName + (i+startPos)  + "_" + imgType);
+			this.textureList[i] = RES.getRes(imgName + i + "_" + imgType);
 		}
 		if(this.textureList.length > 0){
 			this.texture = this.textureList[0];

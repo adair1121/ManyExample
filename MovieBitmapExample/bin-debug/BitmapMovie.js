@@ -46,14 +46,13 @@ var BitmapMovie = (function (_super) {
     /**
      * 使用零散的序列图初始化
      * @imgName 图片名称  命名格式: "boom0_png","boom1_png",...
-     * @startPos 起始位置
      * @imgType 图片后缀 "png"或者"jpg"
      * @pieceNum 有多少张
      */
-    BitmapMovie.prototype.initByTile = function (imgName, startPos, imgType, pieceNum) {
+    BitmapMovie.prototype.initByTile = function (imgName, imgType, pieceNum) {
         this.textureList.length = 0;
         for (var i = 0; i < pieceNum; i++) {
-            this.textureList[i] = RES.getRes(imgName + (i + startPos) + "_" + imgType);
+            this.textureList[i] = RES.getRes(imgName + i + "_" + imgType);
         }
         if (this.textureList.length > 0) {
             this.texture = this.textureList[0];
@@ -156,5 +155,5 @@ var BitmapMovie = (function (_super) {
         configurable: true
     });
     return BitmapMovie;
-}(egret.Bitmap));
+}(eui.Image));
 __reflect(BitmapMovie.prototype, "BitmapMovie");
