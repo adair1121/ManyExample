@@ -13,9 +13,11 @@ class HomeScene extends eui.Component{
 
 	public childrenCreated(){
 		//透明图片test.png，测试用，用来观察img覆盖效果
-		//var htmlCode = new QRCode("resource/assets/test.png");
+		var htmlCode = new QRCode("resource/assets/test.png");
 		
-		var htmlCode = new QRCode("resource/assets/code.jpg");
+		//实际二维码图片
+		//var htmlCode = new QRCode("resource/assets/code.jpg");
+
 		htmlCode.setPosition(this.euiCode.x, this.euiCode.y, this.euiCode.width, this.euiCode.height);
 		htmlCode.showHtmlCode();
 	}
