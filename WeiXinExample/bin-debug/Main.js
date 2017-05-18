@@ -137,7 +137,7 @@ var Main = (function (_super) {
         //微信接口测试
         this.addChild(new HomeScene());
         //网页授权测试
-        new WebChat();
+        //new WebChat();
     };
     return Main;
 }(eui.UILayer));

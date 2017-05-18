@@ -133,6 +133,6 @@ class Main extends eui.UILayer {
         this.addChild(new HomeScene());
         
         //网页授权测试
-        new WebChat();
+        //new WebChat();
     }
 }

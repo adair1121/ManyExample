@@ -303,7 +303,7 @@ var WxUtils = (function (_super) {
         if (longitude === void 0) { longitude = 0; }
         if (name === void 0) { name = ''; }
         if (address === void 0) { address = ''; }
-        if (scale === void 0) { scale = 1; }
+        if (scale === void 0) { scale = 28; }
         if (infoUrl === void 0) { infoUrl = ''; }
         wx.openLocation({
             latitude: latitude,
