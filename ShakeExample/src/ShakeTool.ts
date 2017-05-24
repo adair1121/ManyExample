@@ -55,9 +55,11 @@ class ShakeTool {
     }
     
     private shakeComplete(): void {
-        egret.Tween.removeTweens(this.target);
-        this.target.x = this.initX;
-        this.target.y = this.initY;
+        if(this.target){
+            egret.Tween.removeTweens(this.target);
+            this.target.x = this.initX;
+            this.target.y = this.initY;
+        }
         this.timer.removeEventListener(egret.TimerEvent.TIMER,this.shaking,this);
         this.timer.removeEventListener(egret.TimerEvent.TIMER_COMPLETE,this.shakeComplete,this);
     }

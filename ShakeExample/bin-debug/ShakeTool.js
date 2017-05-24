@@ -49,9 +49,11 @@ var ShakeTool = (function () {
         egret.Tween.get(this.target).to({ x: this.initX, y: this.initY }, 999 / this.rate);
     };
     ShakeTool.prototype.shakeComplete = function () {
-        egret.Tween.removeTweens(this.target);
-        this.target.x = this.initX;
-        this.target.y = this.initY;
+        if (this.target) {
+            egret.Tween.removeTweens(this.target);
+            this.target.x = this.initX;
+            this.target.y = this.initY;
+        }
         this.timer.removeEventListener(egret.TimerEvent.TIMER, this.shaking, this);
         this.timer.removeEventListener(egret.TimerEvent.TIMER_COMPLETE, this.shakeComplete, this);
     };
