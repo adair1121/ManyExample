@@ -16,7 +16,7 @@ var HomeScene = (function (_super) {
     function HomeScene() {
         var _this = _super.call(this) || this;
         _this.panColor = 0; //当前选择的画笔颜色
-        _this.panLineSize = 1; //画笔大小
+        _this.panLineSize = 5; //画笔大小
         _this.eraserSize = 20; //橡皮擦大小
         _this.skinName = "HomeSceneSkin";
         return _this;

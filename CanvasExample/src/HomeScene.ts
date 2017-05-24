@@ -15,7 +15,7 @@ class HomeScene extends eui.Component{
 	private resetBtn:eui.Image;      //重置画布
 
 	private panColor:number = 0;     //当前选择的画笔颜色
-	private panLineSize:number = 1;  //画笔大小
+	private panLineSize:number = 5;  //画笔大小
 	private eraserSize:number = 20;  //橡皮擦大小
 	private curState:DrawState;      //当前状态
 	
