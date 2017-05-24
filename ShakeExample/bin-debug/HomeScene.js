@@ -16,6 +16,8 @@ var HomeScene = (function (_super) {
     function HomeScene() {
         var _this = _super.call(this) || this;
         _this.skinName = "HomeSceneSkin";
+        _this.percentWidth = 100;
+        _this.percentHeight = 100;
         return _this;
     }
     HomeScene.prototype.childrenCreated = function () {

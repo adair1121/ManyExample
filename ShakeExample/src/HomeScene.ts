@@ -7,6 +7,8 @@ class HomeScene extends eui.Component{
 	public constructor() {
 		super();
 		this.skinName = "HomeSceneSkin";
+		this.percentWidth = 100;
+		this.percentHeight = 100;
 	}
 
 	public childrenCreated(){
