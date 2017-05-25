@@ -19,21 +19,24 @@ var HomeScene = (function (_super) {
         return _this;
     }
     HomeScene.prototype.childrenCreated = function () {
+        this.shakeTest();
+    };
+    HomeScene.prototype.shakeTest = function () {
         this.shakeTool = new ShakeTool();
         this.shakeTool.addEventListener(egret.Event.CHANGE, this.onChange, this);
         this.shakeTool.start();
     };
     HomeScene.prototype.onChange = function (e) {
         var data = e.data;
-        //显示测试数据
-        this.label0.text = "x:" + data.x;
-        this.label1.text = "y:" + data.y;
-        this.label2.text = "z:" + data.z;
-        this.label3.text = "shakeCount:" + data.shakeCount;
-        //用户大概晃动了手机2-3次
+        this.label0.text = data.x;
+        this.label1.text = data.y;
+        this.label2.text = data.z;
         if (data.shakeCount > 6) {
+            egret.log("摇一摇完成");
+            this.shakeTool.stop();
         }
     };
     return HomeScene;
 }(eui.Component));
 __reflect(HomeScene.prototype, "HomeScene");
+//# sourceMappingURL=HomeScene.js.map

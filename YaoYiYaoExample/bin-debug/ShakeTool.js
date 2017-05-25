@@ -54,6 +54,7 @@ var ShakeTool = (function (_super) {
             this.xAngle = e.beta; //x轴
             this.yAngle = e.gamma; //y轴
             this.zAngle = e.alpha; //z轴
+            //旋转超过一定角度，则算摇动一次
             if (Math.abs(this.last_x - this.xAngle) > this.shakeAngle ||
                 Math.abs(this.last_y - this.yAngle) > this.shakeAngle ||
                 Math.abs(this.last_z - this.zAngle) > this.shakeAngle) {
@@ -63,8 +64,10 @@ var ShakeTool = (function (_super) {
             this.last_y = this.yAngle;
             this.last_z = this.zAngle;
         }
+        //派发事件
         this.dispatchEventWith(egret.Event.CHANGE, false, { x: this.xAngle, y: this.yAngle, z: this.zAngle, shakeCount: this.shakeCount });
     };
     return ShakeTool;
 }(egret.EventDispatcher));
 __reflect(ShakeTool.prototype, "ShakeTool");
+//# sourceMappingURL=ShakeTool.js.map

@@ -27,7 +27,11 @@ class HomeScene extends eui.Component{
 
 	private onChange(e:egret.Event){
 		var data = e.data;
-		//用户大概晃动了手机2-3次
+		
+		this.label0.text = data.x;
+		this.label1.text = data.y;
+		this.label2.text = data.z;
+
 		if(data.shakeCount > 6){
 			egret.log("摇一摇完成");
 			this.shakeTool.stop();
