@@ -1,0 +1,25 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,scene_png,scene_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "description_json",
+			"type": "json",
+			"url": "config/description.json"
+		},
+		{
+			"name": "scene_png",
+			"type": "image",
+			"url": "assets/scene.png"
+		},
+		{
+			"name": "scene_json",
+			"type": "json",
+			"url": "assets/scene.json"
+		}
+	]
+}
