@@ -8,6 +8,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 /**
  * 插值
+ * 1. 不知插值是干什么的...
+ *
+ *
  * @author chenkai
  * @since 2017/6/23
  */

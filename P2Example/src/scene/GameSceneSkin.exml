@@ -25,7 +25,15 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Button label="物理小球" x="29.96" y="168.99">
+		<e:Button label="拖拽+约束" x="29.96" y="168.99">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_jpg" source.down="btn_jpg"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="键盘+人物+穿透" x="-10.04" y="222.99">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_jpg" source.down="btn_jpg"/>

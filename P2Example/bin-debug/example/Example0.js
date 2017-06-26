@@ -8,6 +8,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 /**
  * 创建一个方块，自由落体
+ *
+ * 1. 世界，矩形，地板的使用
+ *
  * @author chenkai
  * @since 2017/6/23
  */
