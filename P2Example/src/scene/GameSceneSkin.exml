@@ -41,5 +41,21 @@
 			</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:Button label="键盘+人物+碰撞组" x="-38.03" y="276.31">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_jpg" source.down="btn_jpg"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="射线" x="31.28" y="329.63">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_jpg" source.down="btn_jpg"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
 	</e:Group>
 </e:Skin>

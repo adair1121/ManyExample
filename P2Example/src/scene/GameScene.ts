@@ -6,6 +6,7 @@
 class GameScene extends eui.Component{
 	private btnGroup:eui.Group;       //按钮容器
 	private curExample:egret.Sprite;  //当前例子
+	public demoList = ["Box","Ice","Interpolation","MouseJoint","Character","Platformer","RaycastingD"];
 
 	public constructor() {
 		super();
@@ -23,7 +24,7 @@ class GameScene extends eui.Component{
 				if(this.curExample != null){
 					this.curExample.parent && this.curExample.parent.removeChild(this.curExample);
 				}
-				var clz = egret.getDefinitionByName("Example" + i);
+				var clz = egret.getDefinitionByName(this.demoList[i]);
 				if(clz){
 					this.curExample = new clz();
 					this.addChild(this.curExample);

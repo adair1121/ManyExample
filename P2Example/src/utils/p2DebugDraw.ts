@@ -53,10 +53,10 @@ class p2DebugDraw extends egret.Sprite{
         sp.graphics.lineStyle(1, 0xff0000,1);
         sp.graphics.drawCircle(0,0, radius);
         sp.graphics.moveTo(sp.x, sp.y);
-        sp.graphics.lineTo(sp.x + 10, sp.y);
+        sp.graphics.lineTo(sp.x + 30, sp.y);
         this.addChild(sp);
 
-        var circle:p2.Circle = new p2.Circle({radius:100});
+        var circle:p2.Circle = new p2.Circle({radius:radius});
 		var body = new p2.Body({mass:1});
 		body.addShape(circle);
 		this.world.addBody(body);
@@ -84,6 +84,74 @@ class p2DebugDraw extends egret.Sprite{
 
         return body;
     }
+
+    /**
+     * 创建胶囊
+     * @radius 半径
+     * @len 长度
+     */
+    public createCapsule(radius, len){
+        var sp:egret.Sprite = new egret.Sprite();
+         sp.graphics.beginFill(0x990000, 0.5);
+         sp.graphics.drawArc(-len/2, 0, radius, 0, 2*Math.PI);
+         sp.graphics.drawArc(len/2, 0, radius, -Math.PI, Math.PI);
+
+        sp.graphics.moveTo(-len/2, -radius);
+        sp.graphics.lineTo( len/2, -radius);
+        sp.graphics.lineTo( len/2, radius);
+        sp.graphics.lineTo(-len/2, radius);
+
+        sp.graphics.moveTo(-len/2, -radius);
+        sp.graphics.lineTo( len/2, -radius);
+
+        sp.graphics.lineTo( len/2, radius);
+        sp.graphics.lineTo(-len/2, radius);
+        sp.graphics.endFill();
+
+        this.addChild(sp);
+
+        var capsuleShape = new p2.Capsule({ length: 1, radius: 0.5 });
+        var capsuleBody = new p2.Body({
+            mass:1
+        });
+        capsuleBody.addShape(capsuleShape);
+        capsuleBody.displays = [sp];
+        this.world.addBody(capsuleBody);
+        return capsuleBody;
+      }
+
+      /**
+       * 创建凸行
+       */
+      public createConvex(){
+        //定点数
+        var vertices = [];
+        var size = 1;
+        for(var i=0, N=5; i<N; i++){
+            var a = 2*Math.PI / N * i;
+            var vertex = [Math.round(size*0.5*Math.cos(a)*100), Math.round(size*0.5*Math.sin(a)*100)]; // Note: vertices are added counter-clockwise
+            vertices.push(vertex);
+        }
+        //创建凸行sprite
+        var sp:egret.Sprite = new egret.Sprite();
+        sp.graphics.beginFill(0x990000);
+        sp.graphics.lineStyle(1, 0xff0000);
+        sp.graphics.moveTo(vertices[0][0], vertices[0][1]);
+        for (var i = 1; i < vertices.length; i++) {
+            sp.graphics.lineTo(vertices[i][0], vertices[i][1]);
+        }
+        sp.graphics.endFill();
+        this.addChild(sp);
+        //创建凸行body
+        var convexShape = new p2.Convex({ vertices: vertices });
+        var convexBody = new p2.Body({
+            mass: 1
+        });
+        convexBody.addShape(convexShape);
+        convexBody.displays = [sp];
+        this.world.addBody(convexBody);
+        return convexBody;
+      }
 
 
 

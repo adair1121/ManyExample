@@ -8,14 +8,16 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 /**
  * 键盘操作矩形移动，和其他刚体碰撞
- * 1.
+ * 1. ContactMaterial材料的使用
+ * 2. preSolve预处理，穿透实现。
+ * 3. beginContact碰撞检测
  *
  * @author chenkai
  * @since 2017/6/26
  */
-var Example4 = (function (_super) {
-    __extends(Example4, _super);
-    function Example4() {
+var Character = (function (_super) {
+    __extends(Character, _super);
+    function Character() {
         var _this = _super.call(this) || this;
         _this.platforms = []; //平台列表
         _this.boxes = []; //物体列表
@@ -92,7 +94,7 @@ var Example4 = (function (_super) {
         }, _this);
         return _this;
     }
-    Example4.prototype.beginContact = function (evt) {
+    Character.prototype.beginContact = function (evt) {
         //获取和角色碰撞的刚体
         if (evt.bodyA != this.characterBody && evt.bodyB != this.characterBody)
             return;
@@ -106,7 +108,7 @@ var Example4 = (function (_super) {
             this.currentPlatform = this.platforms[platformIndex];
         }
     };
-    Example4.prototype.preSolve = function (evt) {
+    Character.prototype.preSolve = function (evt) {
         //平台在角色下方，则角色跟随平台移动
         if (this.currentPlatform) {
             this.characterBody.velocity[0] += this.currentPlatform.velocity[0];
@@ -126,7 +128,7 @@ var Example4 = (function (_super) {
             }
         }
     };
-    Example4.prototype.endContact = function (evt) {
+    Character.prototype.endContact = function (evt) {
         //碰撞时角色和平台，且满足穿透条件，则重置穿透条件
         if ((evt.bodyA == this.characterBody && evt.bodyB == this.passThroughBody) || evt.bodyB == this.characterBody && evt.bodyA == this.passThroughBody) {
             this.passThroughBody = undefined;
@@ -141,7 +143,7 @@ var Example4 = (function (_super) {
         }
     };
     //键盘按下
-    Example4.prototype.onKeyDown = function (evt) {
+    Character.prototype.onKeyDown = function (evt) {
         var buttons = window["Example4"].buttons;
         var characterBody = window["Example4"].characterBody;
         evt = (evt) ? evt : window.event;
@@ -161,7 +163,7 @@ var Example4 = (function (_super) {
         }
     };
     //键盘释放
-    Example4.prototype.onKeyUp = function (evt) {
+    Character.prototype.onKeyUp = function (evt) {
         var buttons = window["Example4"].buttons;
         evt = (evt) ? evt : window.event;
         if (evt.keyCode) {
@@ -176,7 +178,7 @@ var Example4 = (function (_super) {
             }
         }
     };
-    return Example4;
+    return Character;
 }(egret.Sprite));
-__reflect(Example4.prototype, "Example4");
-//# sourceMappingURL=Example4.js.map
+__reflect(Character.prototype, "Character");
+//# sourceMappingURL=Character.js.map

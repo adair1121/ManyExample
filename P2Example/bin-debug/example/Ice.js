@@ -13,9 +13,9 @@ var __extends = (this && this.__extends) || function (d, b) {
  * @since 2017/6/23
  *
  */
-var Example1 = (function (_super) {
-    __extends(Example1, _super);
-    function Example1() {
+var Ice = (function (_super) {
+    __extends(Ice, _super);
+    function Ice() {
         var _this = _super.call(this) || this;
         _this.gX = 50;
         _this.gY = 50;
@@ -44,14 +44,14 @@ var Example1 = (function (_super) {
     //e.alpha   z轴角速度0~360   根据啥来算的，东南西北？，向右减少，向左增加
     //e.beta  x轴角速度-90-90 手机平放0度，手机头朝上增加，手机头朝下减少
     //e.gamma y轴角速度-90~270 手机平放0度，向右倾斜增加，向左倾斜减少
-    Example1.prototype.onOrientation = function (e) {
+    Ice.prototype.onOrientation = function (e) {
         //        this.textField.text = e.alpha + "\n" + e.beta + "\n" + e.gamma + "\n" + this.world.gravity[0] + "\n" + this.world.gravity[1];
         if (this.isMobile) {
             this.world.gravity = [e.gamma / 90 * this.gX, e.beta / 90 * this.gY];
         }
     };
     //每帧更新刚体皮肤
-    Example1.prototype.onEnterFrame = function () {
+    Ice.prototype.onEnterFrame = function () {
         this.world.step(0.1);
         var len = this.world.bodies.length;
         for (var i = 0; i < len; i++) {
@@ -65,7 +65,7 @@ var Example1 = (function (_super) {
         }
     };
     //点击增加一个冰块
-    Example1.prototype.addOneBox = function (e) {
+    Ice.prototype.addOneBox = function (e) {
         var rand = Math.floor(Math.random() * 7); // 0-6
         var display = new egret.Bitmap(RES.getRes("ice00" + rand));
         display.x = e.stageX;
@@ -79,13 +79,13 @@ var Example1 = (function (_super) {
         body.displays = [display];
     };
     //创建世界
-    Example1.prototype.createWorld = function () {
+    Ice.prototype.createWorld = function () {
         this.world = new p2.World();
         //this.world.sleepMode = p2.World.BODY_SLEEPING;   //睡眠后，物体落地则不会感应重力感应
         this.world.gravity = [0, 30];
     };
     //创建上下左右地板
-    Example1.prototype.createGround = function () {
+    Ice.prototype.createGround = function () {
         var buttomBody = this.getOneRectBody(GameConst.stage.stageWidth, 1);
         buttomBody.type = p2.Body.KINEMATIC;
         buttomBody.position = [GameConst.stage.stageWidth / 2, GameConst.stage.stageHeight];
@@ -112,7 +112,7 @@ var Example1 = (function (_super) {
         //        this.addChild(rightDisp);
     };
     //获取一个方块刚体
-    Example1.prototype.getOneRectBody = function (w, h) {
+    Ice.prototype.getOneRectBody = function (w, h) {
         var shape = new p2.Box({ width: w, height: h });
         var body = new p2.Body({ mass: 100 });
         body.addShape(shape);
@@ -120,7 +120,7 @@ var Example1 = (function (_super) {
         return body;
     };
     //获取一个Plane刚体
-    Example1.prototype.getOnePlaneBody = function () {
+    Ice.prototype.getOnePlaneBody = function () {
         var shape = new p2.Plane();
         var body = new p2.Body();
         body.addShape(shape);
@@ -128,7 +128,7 @@ var Example1 = (function (_super) {
         return body;
     };
     //创建一个方块皮肤
-    Example1.prototype.getOneRectSkin = function (w, h, color) {
+    Ice.prototype.getOneRectSkin = function (w, h, color) {
         if (color === void 0) { color = 0xff0000; }
         var sp = new egret.Sprite();
         sp.graphics.beginFill(color);
@@ -138,7 +138,7 @@ var Example1 = (function (_super) {
         sp.anchorOffsetY = sp.height / 2;
         return sp;
     };
-    return Example1;
+    return Ice;
 }(egret.Sprite));
-__reflect(Example1.prototype, "Example1");
-//# sourceMappingURL=Example1.js.map
+__reflect(Ice.prototype, "Ice");
+//# sourceMappingURL=Ice.js.map

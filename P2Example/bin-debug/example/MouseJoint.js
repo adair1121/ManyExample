@@ -16,9 +16,9 @@ var __extends = (this && this.__extends) || function (d, b) {
  * @author chenkai
  * @since  2017/6/23
  */
-var Example3 = (function (_super) {
-    __extends(Example3, _super);
-    function Example3() {
+var MouseJoint = (function (_super) {
+    __extends(MouseJoint, _super);
+    function MouseJoint() {
         var _this = _super.call(this) || this;
         //测试模块
         _this.debugDraw = new p2DebugDraw();
@@ -38,7 +38,7 @@ var Example3 = (function (_super) {
         return _this;
     }
     //触摸开始，在触摸矩形的位置，添加矩形和一个不可见刚体的约束
-    Example3.prototype.onTouchBegin = function (e) {
+    MouseJoint.prototype.onTouchBegin = function (e) {
         console.log("begin");
         var position = [e.stageX, e.stageY];
         var hitBodies = this.debugDraw.world.hitTest(position, [this.boxBody], 1); //测试世界点是否重叠物体
@@ -54,18 +54,18 @@ var Example3 = (function (_super) {
         }
     };
     //触摸移动，移动不可见刚体，利用约束，让矩形跟随移动和旋转
-    Example3.prototype.onTouchMove = function (e) {
+    MouseJoint.prototype.onTouchMove = function (e) {
         var position = [e.stageX, e.stageY];
         this.mouseBody.position[0] = position[0];
         this.mouseBody.position[1] = position[1];
     };
     //触摸停止，移除约束，矩形自由下落
-    Example3.prototype.onTouchEnd = function (e) {
+    MouseJoint.prototype.onTouchEnd = function (e) {
         console.log("end");
         this.debugDraw.world.removeConstraint(this.mouseConstraint);
         this.mouseConstraint = null;
     };
-    return Example3;
+    return MouseJoint;
 }(egret.Sprite));
-__reflect(Example3.prototype, "Example3");
-//# sourceMappingURL=Example3.js.map
+__reflect(MouseJoint.prototype, "MouseJoint");
+//# sourceMappingURL=MouseJoint.js.map

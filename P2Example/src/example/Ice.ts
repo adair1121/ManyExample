@@ -5,7 +5,7 @@
  * @since 2017/6/23
  * 
  */
-class Example1 extends egret.Sprite{
+class Ice extends egret.Sprite{
     
     private world: p2.World;
     private planeBody: p2.Body;

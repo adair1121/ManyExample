@@ -1,11 +1,13 @@
 /**
  * 键盘操作矩形移动，和其他刚体碰撞
- * 1. 
+ * 1. ContactMaterial材料的使用
+ * 2. preSolve预处理，穿透实现。
+ * 3. beginContact碰撞检测
  * 
  * @author chenkai
  * @since 2017/6/26
  */
-class Example4 extends egret.Sprite{
+class Character extends egret.Sprite{
 	private debugDraw: p2DebugDraw;   //测试类
 	private world:p2.World;           //世界
 

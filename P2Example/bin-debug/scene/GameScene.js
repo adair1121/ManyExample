@@ -15,6 +15,7 @@ var GameScene = (function (_super) {
     __extends(GameScene, _super);
     function GameScene() {
         var _this = _super.call(this) || this;
+        _this.demoList = ["Box", "Ice", "Interpolation", "MouseJoint", "Character", "Platformer", "RaycastingD"];
         _this.skinName = "GameSceneSkin";
         return _this;
     }
@@ -28,7 +29,7 @@ var GameScene = (function (_super) {
                 if (this.curExample != null) {
                     this.curExample.parent && this.curExample.parent.removeChild(this.curExample);
                 }
-                var clz = egret.getDefinitionByName("Example" + i);
+                var clz = egret.getDefinitionByName(this.demoList[i]);
                 if (clz) {
                     this.curExample = new clz();
                     this.addChild(this.curExample);

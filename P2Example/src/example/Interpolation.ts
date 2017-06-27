@@ -6,7 +6,7 @@
  * @author chenkai
  * @since 2017/6/23
  */
-class Example2 extends egret.Sprite{
+class Interpolation extends egret.Sprite{
 	private world:p2.World;
 	private ballBody:p2.Body;
 	private ball2Body:p2.Body;

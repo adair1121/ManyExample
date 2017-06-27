@@ -14,9 +14,9 @@ var __extends = (this && this.__extends) || function (d, b) {
  * @author chenkai
  * @since 2017/6/23
  */
-var Example0 = (function (_super) {
-    __extends(Example0, _super);
-    function Example0() {
+var Box = (function (_super) {
+    __extends(Box, _super);
+    function Box() {
         var _this = _super.call(this) || this;
         //创建world
         _this.world = new p2.World();
@@ -42,7 +42,7 @@ var Example0 = (function (_super) {
         _this.addEventListener(egret.Event.ENTER_FRAME, _this.onEnterFrame, _this);
         return _this;
     }
-    Example0.prototype.onEnterFrame = function () {
+    Box.prototype.onEnterFrame = function () {
         //更新物理世界
         this.world.step(60 / 1000);
         var len = this.world.bodies.length;
@@ -54,7 +54,7 @@ var Example0 = (function (_super) {
             display.rotation = body.angle * 180 / Math.PI;
         }
     };
-    Example0.prototype.createBox = function () {
+    Box.prototype.createBox = function () {
         var sp = new egret.Sprite();
         sp.graphics.beginFill(0xff0000);
         sp.graphics.drawRect(0, 0, 50, 50);
@@ -63,7 +63,7 @@ var Example0 = (function (_super) {
         sp.anchorOffsetY = sp.height / 2;
         return sp;
     };
-    Example0.prototype.createPlane = function () {
+    Box.prototype.createPlane = function () {
         var sp = new egret.Sprite();
         sp.graphics.lineStyle(10, 0x00ff00);
         sp.graphics.moveTo(0, 0);
@@ -73,7 +73,7 @@ var Example0 = (function (_super) {
         this.addChild(sp);
         return sp;
     };
-    return Example0;
+    return Box;
 }(egret.Sprite));
-__reflect(Example0.prototype, "Example0");
-//# sourceMappingURL=Example0.js.map
+__reflect(Box.prototype, "Box");
+//# sourceMappingURL=Box.js.map

@@ -6,7 +6,7 @@
  * @author chenkai
  * @since 2017/6/23
  */
-class Example0 extends egret.Sprite{
+class Box extends egret.Sprite{
 	private world:p2.World;
 	private boxBody:p2.Body;
 	private planeBody:p2.Body;

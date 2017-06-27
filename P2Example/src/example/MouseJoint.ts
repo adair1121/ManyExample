@@ -8,7 +8,7 @@
  * @author chenkai
  * @since  2017/6/23
  */
-class Example3 extends egret.Sprite{
+class MouseJoint extends egret.Sprite{
 	private debugDraw: p2DebugDraw;
 	private mouseBody:p2.Body;
 	private boxBody:p2.Body;

@@ -14,9 +14,9 @@ var __extends = (this && this.__extends) || function (d, b) {
  * @author chenkai
  * @since 2017/6/23
  */
-var Example2 = (function (_super) {
-    __extends(Example2, _super);
-    function Example2() {
+var Interpolation = (function (_super) {
+    __extends(Interpolation, _super);
+    function Interpolation() {
         var _this = _super.call(this) || this;
         //创建世界
         _this.world = new p2.World();
@@ -47,7 +47,7 @@ var Example2 = (function (_super) {
         _this.addEventListener(egret.Event.ENTER_FRAME, _this.onEnterFrame, _this);
         return _this;
     }
-    Example2.prototype.onEnterFrame = function () {
+    Interpolation.prototype.onEnterFrame = function () {
         this.world.step(60 / 1000);
         var display = this.ballBody.displays[0];
         display.x = this.ballBody.position[0];
@@ -58,14 +58,14 @@ var Example2 = (function (_super) {
         display.y = this.ball2Body.interpolatedPosition[1];
         display.rotation = this.ball2Body.angle * 180 / Math.PI;
     };
-    Example2.prototype.createCircle = function (color, radius) {
+    Interpolation.prototype.createCircle = function (color, radius) {
         var sp = new egret.Sprite();
         sp.graphics.beginFill(color);
         sp.graphics.drawCircle(0, 0, 100); //circle中心点在几何中心，rectangle中心点在左上角.所以circle不需要设置锚点
         sp.graphics.endFill();
         return sp;
     };
-    return Example2;
+    return Interpolation;
 }(egret.Sprite));
-__reflect(Example2.prototype, "Example2");
-//# sourceMappingURL=Example2.js.map
+__reflect(Interpolation.prototype, "Interpolation");
+//# sourceMappingURL=Interpolation.js.map
