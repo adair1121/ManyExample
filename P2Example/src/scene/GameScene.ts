@@ -6,7 +6,8 @@
 class GameScene extends eui.Component{
 	private btnGroup:eui.Group;       //按钮容器
 	private curExample:egret.Sprite;  //当前例子
-	public demoList = ["Box","Ice","Interpolation","MouseJoint","Character","Platformer","RaycastingD"];
+	public demoList = ["Box","Ice","Interpolation","MouseJoint","Character","Platformer","RaycastingD","Rayreflect",
+		"Buoyancy"];
 
 	public constructor() {
 		super();

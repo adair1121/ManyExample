@@ -15,7 +15,8 @@ var GameScene = (function (_super) {
     __extends(GameScene, _super);
     function GameScene() {
         var _this = _super.call(this) || this;
-        _this.demoList = ["Box", "Ice", "Interpolation", "MouseJoint", "Character", "Platformer", "RaycastingD"];
+        _this.demoList = ["Box", "Ice", "Interpolation", "MouseJoint", "Character", "Platformer", "RaycastingD", "Rayreflect",
+            "Buoyancy"];
         _this.skinName = "GameSceneSkin";
         return _this;
     }

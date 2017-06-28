@@ -144,6 +144,20 @@ var p2DebugDraw = (function (_super) {
         this.world.addBody(convexBody);
         return convexBody;
     };
+    /**创建一条线 */
+    p2DebugDraw.prototype.createLine = function (len) {
+        var sp = new egret.Sprite();
+        sp.graphics.lineStyle(2, 0xff0000);
+        sp.graphics.moveTo(0, 0);
+        sp.graphics.lineTo(0, len);
+        this.addChild(sp);
+        var line = new p2.Line({ length: len });
+        var body = new p2.Body();
+        body.addShape(line);
+        body.displays = [sp];
+        this.world.addBody(body);
+        return body;
+    };
     /**刷新物理世界 */
     p2DebugDraw.prototype.drawDebug = function () {
         this.world.step(60 / 1000);

@@ -153,7 +153,22 @@ class p2DebugDraw extends egret.Sprite{
         return convexBody;
       }
 
+   /**创建一条线 */
+   public createLine(len:number){
+       var sp:egret.Sprite = new egret.Sprite();
+       sp.graphics.lineStyle(2,0xff0000);
+       sp.graphics.moveTo(0,0);
+       sp.graphics.lineTo(0,len);
+       this.addChild(sp);
 
+       var line:p2.Line = new p2.Line({length:len});
+       var body:p2.Body = new p2.Body();
+       body.addShape(line);
+       body.displays = [sp];
+       this.world.addBody(body);
+
+       return body;
+   }
 
     /**刷新物理世界 */
     public drawDebug(){
