@@ -135,7 +135,7 @@ var Main = (function (_super) {
      */
     Main.prototype.startCreateScene = function () {
         GameConst.stage = this.stage;
-        this.addChild(new GameScene());
+        this.addChild(new ExampleScene());
     };
     return Main;
 }(eui.UILayer));

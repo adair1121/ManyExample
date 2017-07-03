@@ -16,7 +16,7 @@ var GameScene = (function (_super) {
     function GameScene() {
         var _this = _super.call(this) || this;
         _this.demoList = ["Box", "Ice", "Interpolation", "MouseJoint", "Character", "Platformer", "RaycastingD", "Rayreflect",
-            "Buoyancy"];
+            "Buoyancy", "Car"];
         _this.skinName = "GameSceneSkin";
         return _this;
     }

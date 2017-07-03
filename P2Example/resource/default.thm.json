@@ -16,6 +16,7 @@
   },
   "autoGenerateExmlsList": true,
   "exmls": [
+    "src/scene/ExampleSceneSkin.exml",
     "src/scene/GameSceneSkin.exml"
   ]
 }

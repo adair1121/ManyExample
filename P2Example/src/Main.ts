@@ -131,6 +131,6 @@ class Main extends eui.UILayer {
 
     protected startCreateScene(): void {
          GameConst.stage = this.stage;
-         this.addChild(new GameScene());
+         this.addChild(new ExampleScene());
     }
 }
